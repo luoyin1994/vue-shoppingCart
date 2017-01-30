@@ -1,0 +1,28 @@
+{
+  "name": "vue-shoppingcar",
+  "version": "1.0.0",
+  "description": "shoppingcar demo",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.1",
+    "jade": "^1.11.0",
+    "stylus": "^0.54.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luoyin1994/vue-shoppingCar.git"
+  },
+  "keywords": [
+    "shoppingcar"
+  ],
+  "author": "luoyin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luoyin1994/vue-shoppingCar/issues"
+  },
+  "homepage": "https://github.com/luoyin1994/vue-shoppingCar#readme"
+}

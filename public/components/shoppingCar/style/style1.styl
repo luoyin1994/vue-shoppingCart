@@ -1,0 +1,154 @@
+@import "mixins/row-num.styl"
+@import "mixins/border-radius-left.styl"
+@import "mixins/border-radius-right.styl"
+#shoppingCar
+  .title-wrap
+    margin-top 50px
+    font 20px / 1.5 a
+    font-weight 400
+    text-align center
+    .title
+      width row(1.8)
+      text-align center
+    .line-v
+      width row(5)
+      height 1px
+      background-color #cccccc
+      margin-top -4px
+      vertical-align middle
+
+  .detial-wrap
+    th-height = 50px
+    td-height = 3 *th-height
+    margin-top 30px
+    text-align center
+    width 100%
+    border-collapse: collapse;
+    border-bottom 1px solid #cccccc
+    line-height th-height
+    tr
+      th
+        radius-width = 8px
+        color #f9f9f9
+        background #585858
+        &:first-child
+          border-radius-left 8px
+        &:last-child
+          border-radius-right 8px
+      td
+        height td-height
+        width row(1.2)
+      td.goods-detial-wrap
+        width row(7.2)
+        vertical-align top
+        .goods-detial
+          position relative
+          top 50%
+          transform translateY(-50%)
+          width row(10.5)
+          height 60%
+          .good-img
+            margin 0 5px
+            height 0.6 *td-height
+            width 1.4 *@height
+            img
+              height 100%
+              width 100%
+          .good-text
+            line-height 2.2
+            text-align left
+            height 100%
+            margin-left 25px
+            font-weight bold
+            width row(7)
+            .gifts
+              width 100%
+              dt
+                display inline-block
+                margin-right 10px
+              dd
+                display inline-block
+                color #ababab
+                margin-right 15px
+
+      td.buy-num
+        .choosenum-handler
+          i
+            minus-width = 8px
+            minus-height = 2px
+            icon-color = #2f3130
+            display inline-block
+            height 8px
+            width 8px
+            position relative
+            &.icon-minus
+              &:before
+                content ''
+                display inline-block
+                position absolute
+                top 50%
+                transform translateY(-50%)
+                width 8px
+                height 2px
+                background-color icon-color
+            &.icon-plus
+              &:before, &:after
+                content ''
+                display inline-block
+                position absolute
+                background-color icon-color
+              &:before
+                width minus-width
+                height minus-height
+                top 50%
+                left 0
+                transform translateY(-50%)
+              &:after
+                top 0
+                left 50%
+                transform translateX(-50%)
+                width minus-height
+                height minus-width
+          .countbox
+            vertical-align middle
+            height 20px
+            line-height @height
+            width 1.5*@height
+            margin 0 10px 0 13px
+            border 1px solid #6190ef
+            border-radius 2px
+      td.icon
+        color #1e1c1c
+  .checkbox-wrap
+    height 100%
+    width row(1.5)
+  .checkout-wrap
+    height 80px
+    line-height @height
+    .total-check-wrap
+      text-align center
+      width row(7.2)
+      .check-text
+        padding-top 1px
+        text-align left
+        font-weight 600
+        .checked-all
+          padding-left 0.5em
+          color #ff302e
+        .unchecked-all
+          padding-left 1.5em
+    .checkout
+      .total-money
+        display inline-block
+        font-size 20px
+        margin-right 1.5em
+        span
+          margin-right 0.8em
+          &.amount
+            color #ff302e
+      input
+        color #fff
+        font-size 20px
+        width 7em
+        line-height 1.5
+        border-radius 5px

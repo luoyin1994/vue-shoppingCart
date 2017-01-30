@@ -1,0 +1,25 @@
+i
+  minus-width = 8px
+  minus-height = 2px
+  icon-color = #222222
+  height 8px
+  width 8px
+  position relative
+  &.icon-plus
+    &:before, &:after
+      content ''
+      display inline-block
+      position absolute
+      background-color icon-color
+    &:before
+      width minus-width
+      height minus-height
+      top 50%
+      left 0
+      transform translateY(-50%)
+    &:after
+      top 0
+      left 50%
+      transform translateX(-50%)
+      width minus-height
+      height minus-width
