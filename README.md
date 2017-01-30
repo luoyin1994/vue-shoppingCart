@@ -6,16 +6,19 @@ a vue shoppingCar demo
 2. 类名和html的实现没有参考imooc教程，对于有该方面需求的同学请绕行
 
 ###使用步骤
+
 1. clone仓库
 ```git
  git clone git@github.com:luoyin1994/vue-shoppingCar.git
  #or
  git clone https://github.com/luoyin1994/vue-shoppingCar.git
 ```
+
 2. npm安装支持（对于还不知道npm的同学请自行google或baidu学习）
 ```npm
  npm i  
 ```
+
 3. 打开layout.jade,依次找到public目录下的link引用文件jade版本，并编译
 ```jade
  html
@@ -31,10 +34,12 @@ a vue shoppingCar demo
      block container
      block script
 ```
+
 4. 在根目录下执行index.js文件
 ```node
  node index.js 
 ```
+
 5. 打开浏览器，输入
 ```url
  http://localhost:3000
