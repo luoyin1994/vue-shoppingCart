@@ -17,6 +17,13 @@
   width checkbox-width
   border-radius 50%
   border 1px solid #9d9d9d
+  cursor pointer
+  &.checked
+    background-color #ef751f
+    border-color #ef751f
+  &.checked-all
+    background radial-gradient(#f0741e, #ef751f)
+    border-color #ef631c
   &.checked:after
     position relative
     top 50%
@@ -24,7 +31,7 @@
     content ''
     height checkbox-width*0.5
     width checkbox-width*0.28
-    border 2px solid #ff302e
+    border 2px solid #fff
     border-left none
     border-top none
     transform  translateY(-50%)  rotateZ(45deg) translate(-15%,-5%)

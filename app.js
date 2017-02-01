@@ -4,11 +4,11 @@ var path = require('path')
 var app = express()
 
 app.set('views', './views/pages')
-app.set('views engine', 'jade')
+app.set('view engine', 'jade')
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-var port = process.env.PORT || 3000
+var port = process.env.PORT || 8080
 app.listen(port)
 console.log('start on http://localhost:' + port+'/')
 

@@ -37,7 +37,7 @@ a vue shoppingCar demo
 
 4. 在根目录下执行index.js文件
 ```node
- node index.js 
+ node app.js 
 ```
 
 5. 打开浏览器，输入

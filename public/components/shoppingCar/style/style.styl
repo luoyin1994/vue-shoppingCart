@@ -24,7 +24,6 @@
     text-align center
     width 100%
     border-collapse: collapse;
-    border-bottom 1px solid #cccccc
     line-height th-height
     tr
       th
@@ -32,10 +31,11 @@
         color #f9f9f9
         background #585858
         &:first-child
-          border-radius-left 8px
+          border-radius-left 4px
         &:last-child
-          border-radius-right 8px
+          border-radius-right 4px
       td
+        border-bottom 1px solid #cccccc
         height td-height
         width row(1.2)
       td.goods-detial-wrap
@@ -72,22 +72,26 @@
                 margin-right 15px
 
       td.buy-num
+        padding-top 45px
         .choosenum-handler
           i
             minus-width = 8px
             minus-height = 2px
             icon-color = #2f3130
             display inline-block
-            height 8px
-            width 8px
+            height 1.5*minus-width
+            width 1.5*minus-width
             position relative
+            cursor pointer
+            padding 0 6px
             &.icon-minus
               &:before
                 content ''
                 display inline-block
                 position absolute
                 top 50%
-                transform translateY(-50%)
+                left 50%
+                transform translate(-50%,-50%)
                 width 8px
                 height 2px
                 background-color icon-color
@@ -101,24 +105,30 @@
                 width minus-width
                 height minus-height
                 top 50%
-                left 0
-                transform translateY(-50%)
-              &:after
-                top 0
                 left 50%
-                transform translateX(-50%)
+                transform translate(-50%,-50%)
+              &:after
+                top 50%
+                left 50%
+                transform translate(-50%,-50%)
                 width minus-height
                 height minus-width
           .countbox
             vertical-align middle
-            height 20px
-            line-height @height
-            width 1.5*@height
-            margin 0 10px 0 13px
+            text-align center
+            width 3em
+            margin -3px 2px 0
             border 1px solid #6190ef
             border-radius 2px
+        .stock
+          line-height 3
+          font-size 14px
+      td.item-amount
+        color #e0231f
       td.icon
         color #1e1c1c
+        &:before
+          cursor pointer
   .checkbox-wrap
     height 100%
     width row(1.5)
@@ -132,6 +142,8 @@
         padding-top 1px
         text-align left
         font-weight 600
+        .checked-all,.unchecked-all
+          cursor pointer
         .checked-all
           padding-left 0.5em
           color #ff302e
@@ -144,11 +156,12 @@
         margin-right 1.5em
         span
           margin-right 0.8em
-          &.amount
-            color #ff302e
+          &.total-amount
+            color #e0231f
       input
         color #fff
         font-size 20px
-        width 7em
+        width 10em
         line-height 1.5
         border-radius 5px
+        cursor pointer

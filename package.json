@@ -2,13 +2,26 @@
   "name": "vue-shoppingcar",
   "version": "1.0.0",
   "description": "shoppingcar demo",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "express": "^4.14.1",
     "jade": "^1.11.0",
-    "stylus": "^0.54.5"
+    "stylus": "^0.54.5",
+    "css-loader": "^0.26.1",
+    "jade-loader": "^0.8.0",
+    "style-loader": "^0.13.1",
+    "stylus-loader": "^2.4.0",
+    "webpack": "^2.2.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-nodemon": "^0.4.2",
+    "autoprefixer-loader": "^3.2.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "webpack-dev-server": "^1.16.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

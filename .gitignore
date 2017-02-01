@@ -5,3 +5,5 @@
 *test*
 *.css
 node_modules/
+yarn-error.log
+/public/src

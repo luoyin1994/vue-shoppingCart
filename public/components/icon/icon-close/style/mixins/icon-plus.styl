@@ -1,0 +1,18 @@
+icon-plus()
+  @import 'center-both-absolute.styl';
+  wrapwidth = 20px
+  thick = 2px
+  position relative
+  width wrapwidth
+  height wrapwidth
+  &:before, &:after
+    border-radius 1px
+    background-color #222
+    content ''
+    center-both-absolute()
+  &:before
+    width 0.8 * wrapwidth
+    height thick
+  &:after
+    height 0.8 * wrapwidth
+    width thick

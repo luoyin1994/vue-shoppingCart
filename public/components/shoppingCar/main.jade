@@ -1,0 +1,58 @@
+link(rel="stylesheet" href="/components/shoppingCar/style/style.css")
+#shoppingCar
+  header.title-wrap
+    span.line-v
+    span.title 购物车
+    span.line-v
+  table.detial-wrap
+    tr
+      th 商品信息
+      th 商品金额
+      th 商品数量
+      th 总金额
+      th 编辑
+    tr(v-for='item in productList')
+      td.goods-detial-wrap
+        .checkbox-wrap.left
+          span.checkbox(v-bind:class="{'checked':item.checked}" @click='selectedProduct(item)')
+        .goods-detial.right
+          .good-img.left
+            img(v-bind:src='item.productImage')
+          .good-text.left
+            .name {{ item.productName }}
+            dl.gifts
+              dt 赠送：
+              dd(v-for='part in item.parts' v-text='part.partsName')
+      td.unitprice {{ item.productPrice | formatMoney}}
+      td.buy-num
+        .choosenum-handler
+          i.icon-minus(@click='changeMoney(item,-1)')
+          input(type='text' value='0' v-model='item.productQuentity').countbox
+          i.icon-plus(@click='changeMoney(item,1)')
+        .stock 有货
+      td.item-amount {{ item.productPrice*item.productQuentity | money('元') }}
+      td.icon.icon-delete
+  footer.checkout-wrap
+    .total-check-wrap.left
+      .checkbox-wrap.left
+        span.checkbox(:class="{'checked-all':checkedAllFlag}" @click="selectedAll('toggle')")
+      .check-text
+        span.checked-all(@click="selectedAll(true)") 全选
+        span.unchecked-all(@click="selectedAll(false)") 取消全选
+    .checkout.right
+      .total-money
+        span.name 总金额 :
+        span.total-amount {{ totalMoney | money('元') }}
+      input.danger(type='submit' value='结账')
+
+
+//- 放在头顶先加载不能成功渲染
+script(src="/components/shoppingCar/vuejs/main.js")
+
+
+
+
+
+
+
+
