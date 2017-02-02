@@ -1,11 +1,11 @@
 # vue-shoppingCar
 a vue shoppingCar demo
 
-#### 注意：
-1. 因为构建时疏忽，目前版本没有form提交功能，ajax请求不友好，有需求的同学请自行修改或等待新版本
-2. 类名和html的实现没有参考imooc教程，对于有该方面需求的同学请绕行
+目前测试到慕课网课程的 5.1
 
-###使用步骤
+可以实现课程5.1之前的全部功能
+
+### 使用步骤
 
 1. clone仓库
 ```git
@@ -42,7 +42,7 @@ a vue shoppingCar demo
 
 5. 打开浏览器，输入
 ```url
- http://localhost:3000
+ http://localhost:8080
 ```
 然后就可以看到页面了
 
