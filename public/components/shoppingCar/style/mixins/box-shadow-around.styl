@@ -1,5 +1,5 @@
-box-shadow-around(shadow-width, shadow-blur, shadow-color,insetflag)
-  if insetflag is defined
+box-shadow-around(shadow-width, shadow-blur, shadow-color= #9b9b9b,insetflag=null)
+  if insetflag is not null
     insetflag = inset
   else
     insetflag = null

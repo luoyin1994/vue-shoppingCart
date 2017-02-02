@@ -12,8 +12,9 @@
   .alert
     background-color #fff
     center-both-absolute()
-    width 500px
-    height 320px
+    alert-height = 230px
+    height alert-height
+    width 2*@height
     border-radius 3px
     box-shadow 1px 1px 15px #636363
     .icon-close
@@ -21,15 +22,20 @@
       icon-close()
       right 15px
       top 15px
-      &:before, &:after
-        box-shadow 1px 1px 1px #a1a1a1
+      border-radius 50%
+      transition 0.5s
+      &:hover
+        color #fff
+        background-color #db4c19
+
+
     .content
-      height 230px
+      height 0.7*alert-height
       margin 0 auto
       center-y-relative()
       width 80%
       .warning-text
-        height 130px
+        height 0.42*alert-height
         line-height @height
         text-align center
       .choose-wrap
@@ -46,12 +52,13 @@
           font-size 16px
           display inline-block
           border-radius 3px
-          box-shadow-around 1px 1px #e5e5e5
           cursor pointer
+          &:hover
+            box-shadow-around 1px 3px #d5d5d5
+          &.yes
+            border-width = 1px
+            border border-width solid red
+            margin-left - 2*border-width
           &:last-child
             margin-left margin
-          &.yes
-            width @width - 2px
-            height @height -2px
-            border 1px solid red
 

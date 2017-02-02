@@ -1,4 +1,5 @@
 @import "mixins/row-num.styl"
+@import "mixins/box-shadow-around.styl"
 @import "mixins/border-radius-left.styl"
 @import "mixins/border-radius-right.styl"
 #shoppingCar
@@ -79,8 +80,8 @@
             minus-height = 2px
             icon-color = #2f3130
             display inline-block
-            height 1.5*minus-width
-            width 1.5*minus-width
+            height 1.5 *minus-width
+            width 1.5 *minus-width
             position relative
             cursor pointer
             padding 0 6px
@@ -91,7 +92,7 @@
                 position absolute
                 top 50%
                 left 50%
-                transform translate(-50%,-50%)
+                transform translate(-50%, -50%)
                 width 8px
                 height 2px
                 background-color icon-color
@@ -106,11 +107,11 @@
                 height minus-height
                 top 50%
                 left 50%
-                transform translate(-50%,-50%)
+                transform translate(-50%, -50%)
               &:after
                 top 50%
                 left 50%
-                transform translate(-50%,-50%)
+                transform translate(-50%, -50%)
                 width minus-height
                 height minus-width
           .countbox
@@ -127,6 +128,8 @@
         color #e0231f
       td.icon
         color #1e1c1c
+        &:hover
+          text-shadow 1px 1px 1px #b1b1b1
         &:before
           cursor pointer
   .checkbox-wrap
@@ -142,13 +145,17 @@
         padding-top 1px
         text-align left
         font-weight 600
-        .checked-all,.unchecked-all
+        .checked-all, .unchecked-all
           cursor pointer
         .checked-all
           padding-left 0.5em
           color #ff302e
+          &:hover
+            text-shadow 1px 0 1px #dbcdc5
         .unchecked-all
           padding-left 1.5em
+          &:hover
+            text-shadow 1px 0 1px #dbdbdb
     .checkout
       .total-money
         display inline-block
@@ -159,9 +166,11 @@
           &.total-amount
             color #e0231f
       input
-        color #fff
+        color #ffffff
         font-size 20px
         width 10em
         line-height 1.5
         border-radius 5px
         cursor pointer
+        &:hover
+          box-shadow-around 1px 6px #d78c89
