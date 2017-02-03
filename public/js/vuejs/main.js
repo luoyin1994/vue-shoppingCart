@@ -1,9 +1,17 @@
+//对于需要一个组件操作可以影响另一个组件时，
+//将操作的代码放到最后可以避免同样代码写入组件
+//组件在dom中移动带来的影响
+
+//当重新获取相同id的vue时，
+//前面的id相关vue会被后边的代替重新渲染
+
 Vue.filter('money', function (value, type) {
     return "￥ " + value.toFixed(2) + type
 })
-var shoppingCar = new Vue({
-    el     : '#shoppingCar',
+var app = new Vue({
+    el     : '#app',
     data   : {
+        popUpFlag     : false,
         totalMoney    : 0,
         productList   : [],
         checkedAllFlag: false
@@ -80,6 +88,10 @@ var shoppingCar = new Vue({
                     _this.totalMoney += item.productPrice * item.productQuentity
                 }
             })
+        },
+        showPopUp      : function (flag) {
+            if (typeof flag == 'undefined') flag = true
+            this.popUpFlag = flag
         }
     }
 })

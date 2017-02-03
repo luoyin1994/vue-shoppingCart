@@ -1,15 +1,15 @@
 link(rel="stylesheet" href="/components/popUp/style/style.css")
 
-#popUp(v-if='false')
+#popUp(v-if='popUpFlag')
   .alert
-    .icon-close
+    i.icon-close(@click='showPopUp(false)')
     .content
       .warning-text 你确认删除此订单信息吗？
       .choose-wrap
         .button.yes YES
-        .button.no.danger NO
+        .button.no.danger(@click='showPopUp(false)') NO
 
-script(src="/components/popUp/vuejs/main.js")
+//-script(src="/components/popUp/vuejs/main.js")
 
 
 

@@ -85,6 +85,8 @@
             position relative
             cursor pointer
             padding 0 6px
+            &:hover
+              opacity 0.7
             &.icon-minus
               &:before
                 content ''
@@ -126,12 +128,13 @@
           font-size 14px
       td.item-amount
         color #e0231f
-      td.icon
-        color #1e1c1c
-        &:hover
-          text-shadow 1px 1px 1px #b1b1b1
-        &:before
+      td
+        i.icon.icon-delete //需要有个i在icon上，icon的高度才会是字体的高度，不然会是td的高度，样式不好设置
+          color #1e1c1c
           cursor pointer
+          &:hover
+            opacity 0.7
+
   .checkbox-wrap
     height 100%
     width row(1.5)
@@ -151,11 +154,11 @@
           padding-left 0.5em
           color #ff302e
           &:hover
-            text-shadow 1px 0 1px #dbcdc5
+            opacity 0.65
         .unchecked-all
           padding-left 1.5em
           &:hover
-            text-shadow 1px 0 1px #dbdbdb
+            opacity 0.65 !important
     .checkout
       .total-money
         display inline-block
@@ -173,4 +176,4 @@
         border-radius 5px
         cursor pointer
         &:hover
-          box-shadow-around 1px 6px #d78c89
+          opacity 0.8 !important

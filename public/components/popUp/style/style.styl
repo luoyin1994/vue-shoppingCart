@@ -10,32 +10,31 @@
   right 0
   background rgba(204, 204, 204, 0.4)
   .alert
-    background-color #fff
     center-both-absolute()
+    background-color #ffffff
     alert-height = 230px
     height alert-height
-    width 2*@height
+    width 2 *@height
     border-radius 3px
     box-shadow 1px 1px 15px #636363
     .icon-close
       color #5e5e5e //color还可以控制shadow的颜色 color可以控制文字，border,shadow
-      icon-close()
+      icon-close(30px)
       right 15px
       top 15px
       border-radius 50%
-      transition 0.5s
+      transition 0.4s
       &:hover
-        color #fff
+        color #ffffff
         background-color #db4c19
 
-
     .content
-      height 0.7*alert-height
+      height 0.7 *alert-height
       margin 0 auto
       center-y-relative()
       width 80%
       .warning-text
-        height 0.42*alert-height
+        height 0.42 *alert-height
         line-height @height
         text-align center
       .choose-wrap
@@ -53,12 +52,12 @@
           display inline-block
           border-radius 3px
           cursor pointer
-          &:hover
-            box-shadow-around 1px 3px #d5d5d5
+          border 1px solid #d1273b
+          transition 0.3s
           &.yes
-            border-width = 1px
-            border border-width solid red
-            margin-left - 2*border-width
+            margin -2px
+            &:hover
+              background-color #d1273b
           &:last-child
             margin-left margin
 

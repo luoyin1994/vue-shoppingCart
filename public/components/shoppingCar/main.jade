@@ -31,7 +31,7 @@ link(rel="stylesheet" href="/components/shoppingCar/style/style.css")
           i.icon-plus(@click='changeMoney(item,1)')
         .stock 有货
       td.item-amount {{ item.productPrice*item.productQuentity | money('元') }}
-      td.icon.icon-delete
+      td: i.icon.icon-delete(@click='showPopUp()')
   footer.checkout-wrap
     .total-check-wrap.left
       .checkbox-wrap.left
@@ -47,7 +47,7 @@ link(rel="stylesheet" href="/components/shoppingCar/style/style.css")
 
 
 //- 放在头顶先加载不能成功渲染
-script(src="/components/shoppingCar/vuejs/main.js")
+//-script(src="/components/shoppingCar/vuejs/main.js")
 
 
 
