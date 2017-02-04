@@ -5,6 +5,7 @@
 //当重新获取相同id的vue时，
 //前面的id相关vue会被后边的代替重新渲染
 
+//全局注册filter
 Vue.filter('money', function (value, type) {
     return "￥ " + value.toFixed(2) + type
 })
@@ -14,9 +15,11 @@ var app = new Vue({
         popUpFlag     : false,
         totalMoney    : 0,
         productList   : [],
-        checkedAllFlag: false
+        checkedAllFlag: false,
+        curProduct    : {},
     },
     filters: {
+        //局部注册filter
         formatMoney: function (value) {
             return "￥ " + value.toFixed(2)
         }
@@ -80,6 +83,7 @@ var app = new Vue({
             })
             this.calcTotalPrice()
         },
+        //通过设置calcTotalPrice实现操作后需要更新totalPrice时的运算
         calcTotalPrice : function () {
             this.totalMoney = 0
             var _this       = this
@@ -89,9 +93,17 @@ var app = new Vue({
                 }
             })
         },
-        showPopUp      : function (flag) {
-            if (typeof flag == 'undefined') flag = true
-            this.popUpFlag = flag
+        delConfirm     : function (item) {
+            this.popUpFlag  = true
+            this.curProduct = item
+
+        },
+        delProduct     : function () {
+            //todo 没有通过后台请求删除，需要添加
+            var index = this.productList.indexOf(this.curProduct)
+            this.productList.splice(index, 1)
+            this.popUpFlag = false
+            this.calcTotalPrice()
         }
     }
 })

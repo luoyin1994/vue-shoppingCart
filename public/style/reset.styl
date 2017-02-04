@@ -12,11 +12,23 @@ span,i
   display inline-block
 input[type='submit']
   border none
+input[type='submit'],.submit
   background-color #6190ef
   margin 10px
   padding 10px 15px
-  &:click
-    border none
+a.submit
+  text-decoration none
+  display inline-block
+  text-align center
+  color #ffffff
+  line-height 1.5
+  border-radius 5px
+  cursor pointer
+  letter-spacing  1em
+  text-indent 1em //设置letter-spacing后文字会向左边靠设置的位置，需要用text-indent同样的位置实现居中
+  &:hover
+    opacity 0.8 !important
+
 
 #container
   font 16px/1.5 "Microsoft JhengHei"

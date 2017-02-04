@@ -2,12 +2,12 @@ link(rel="stylesheet" href="/components/popUp/style/style.css")
 
 #popUp(v-if='popUpFlag')
   .alert
-    i.icon-close(@click='showPopUp(false)')
+    i.icon-close(@click='popUpFlag=false')
     .content
       .warning-text 你确认删除此订单信息吗？
       .choose-wrap
-        .button.yes YES
-        .button.no.danger(@click='showPopUp(false)') NO
+        .button.yes(@click='delProduct') YES
+        .button.no.danger(@click='popUpFlag=false') NO
 
 //-script(src="/components/popUp/vuejs/main.js")
 

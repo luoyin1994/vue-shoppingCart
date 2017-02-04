@@ -31,7 +31,7 @@ link(rel="stylesheet" href="/components/shoppingCar/style/style.css")
           i.icon-plus(@click='changeMoney(item,1)')
         .stock 有货
       td.item-amount {{ item.productPrice*item.productQuentity | money('元') }}
-      td: i.icon.icon-delete(@click='showPopUp()')
+      td: i.icon.icon-delete(@click='delConfirm(item)')
   footer.checkout-wrap
     .total-check-wrap.left
       .checkbox-wrap.left
@@ -43,7 +43,7 @@ link(rel="stylesheet" href="/components/shoppingCar/style/style.css")
       .total-money
         span.name 总金额 :
         span.total-amount {{ totalMoney | money('元') }}
-      input.danger(type='submit' value='结账')
+      a.submit.danger(href='address.html') 结账
 
 
 //- 放在头顶先加载不能成功渲染

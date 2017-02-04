@@ -45,7 +45,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch')//有文件添加修改可以重新执行里边注册好的任务
     grunt.loadNpmTasks('grunt-nodemon')//实时监听app.js,改变自动重启app
     grunt.loadNpmTasks('grunt-concurrent')//慢任务的优化
-
     grunt.option('force', true)//不要因为警告而中断整个服务
     grunt.registerTask('default', ['concurrent'])//注册任务
 }
