@@ -1,12 +1,17 @@
+@import "mixins/row-num.styl"
+
 .align-left
   text-align left
 
 .align-right
   text-align right
+
 .left
   float left
+
 .right
   float right
+
 .checkbox
   checkbox-width = 20px
   position relative
@@ -28,9 +33,75 @@
     top 50%
     display inline-block
     content ''
-    height checkbox-width*0.5
-    width checkbox-width*0.28
-    border 2px solid #fff
+    height checkbox-width* 0.5
+    width checkbox-width* 0.28
+    border 2px solid #ffffff
     border-left none
     border-top none
-    transform  translateY(-50%)  rotateZ(45deg) translate(-15%,-5%)
+    transform translateY(-50%) rotateZ(45deg) translate(-15%, -5%)
+
+a.submit
+  text-decoration none
+  display inline-block
+  text-align center
+  color #ffffff
+  line-height 1.5
+  border-radius 5px
+  cursor pointer
+  letter-spacing 1em
+  text-indent 1em //设置letter-spacing后文字会向左边靠设置的位置，需要用text-indent同样的位置实现居中
+  &:hover
+    opacity 0.8 !important
+.flow-item
+  item-color = #c5c5c5
+  color item-color
+  .flow-line
+    line-width = 2px
+    color item-color
+    width 100%
+    height 0
+    border-top line-width solid
+    text-align center
+    margin  6*line-width 0
+    &:before
+      border-width 4*line-width //为什么只有4倍以上才可以居中
+      border-style solid
+      content ''
+      margin-left - @border-width
+      margin-top -(line-width / 2)//因为球的顶端是线的底端，需要居中到线的中间还需要加线高度的一半
+      display inline-block
+      border-radius 50%
+      transform translateY(-50%)//margin-top可以上移一部分，但是达到一个值后再怎么负值都没有反应
+
+.title-wrap
+  margin 50px 0
+  font 20px / 1.5  a
+  font-weight 400
+  letter-spacing 0.3em
+  text-indent @letter-spacing
+  text-align center
+  .title
+    width row(1.8)
+    text-align center
+  .line-v
+    width row(5)
+    height 1px
+    background-color #cccccc
+    margin-top -4px
+    vertical-align middle
+
+.more
+  margin 30px 0
+  text-align center
+  color #ff6e2a
+  &:after
+    content ''
+    display inline-block
+    width 6px
+    height @width
+    border 2px solid
+    border-top none
+    border-right none
+    transform rotateZ(-45deg)
+    vertical-align 3px
+    margin-left 6px
