@@ -19,43 +19,18 @@ link(rel="stylesheet" href="/components/address/style/style.css")
         span.line-v
         span.title 配送地址
         span.line-v
-      section.addresses
-        .address-wrap.select
+      ul.addresses
+        li(v-for="(item,index) in filterAddress").address-wrap(:class="{'select':item.selected}" @click="selectAddress(item)")
+          p {{item.selected}}
           .wrap
-            .address-info
-              .title
-                span.province 地球
-                span.district 亚洲
-                span.name LuoYe
-              .address 地球村 亚洲楼 中国层 502号 地球村亚洲楼中国层502号地球村亚洲楼中国层502号
-              .phone 15912345678
-              .address-state.default
-            .opacity-wrap
-              i.icon.icon-edit
-              i.icon.icon-delete
-        .address-wrap
-          .wrap
-            .address-info
-              .title
-                span.province 地球
-                span.district 亚洲
-                span.name LuoYe
-              .address 地球村 亚洲楼 中国层 502号 地球村亚洲楼中国层502号地球村亚洲楼中国层502号
-              .phone 15912345678
-              .address-state
-            .opacity-wrap
-              i.icon.icon-edit
-              i.icon.icon-delete
-        .address-wrap
-          .wrap
-            .address-info
-              .title
-                span.province 地球
-                span.district 亚洲
-                span.name LuoYe
-              .address 地球村 亚洲楼 中国层 502号 地球村亚洲楼中国层502号地球村亚洲楼中国层502号
-              .phone 15912345678
-              .address-state
+            dl.address-info
+              dt.title
+                span.province {{item.province}}
+                span.district {{item.district}}
+                span.name {{item.userName}}
+              dd.address {{item.streetName}}
+              dd.phone {{item.phone}}
+            .address-state(:class="{'default':item.isDefault}")
             .opacity-wrap
               i.icon.icon-edit
               i.icon.icon-delete
@@ -68,11 +43,11 @@ link(rel="stylesheet" href="/components/address/style/style.css")
           span.line-v
           span.title 配送方式
           span.line-v
-        section.methods
-          .method-item.select
+        ul.methods
+          li.method-item.select
             .method-title 标准配送
             .method-price Free
-          .method-item
+          li.method-item
             .method-title 高级配送
             .method-price ￥ 180元
       footer

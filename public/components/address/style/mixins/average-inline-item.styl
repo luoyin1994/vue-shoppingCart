@@ -1,7 +1,12 @@
-average-inline-item(total-item, item-width = 22%)
+average-inline-item(row-total-item, item-width = 22%, n = 2)
   display inline-block
   box-sizing border-box
   width item-width
-  margin-left ((100% - @width* total-item) / (total-item - 1))
+  margin-left ((100% - @width* row-total-item) / (row-total-item - 1))
+  margin-top 20px
+  for i in 1..n
+    num = i * row-total-item + 1
+    &:nth-child({num})
+      margin-left 0
   &:nth-child(1)
     margin-left 0
