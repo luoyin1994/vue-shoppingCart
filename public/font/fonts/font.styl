@@ -1,11 +1,14 @@
 icomoon-font-path ?= "."
 
+icon-plus-border = "\e902"
+icon-plus2 = "\e904"
 icon-delete = "\e903"
+icon-plus = "\e901"
 icon-edit = "\e900"
 @font-face
   font-family 'icon'
-  src url(icomoon-font-path + '/icon.eot?q2futz')
-  src url(icomoon-font-path + '/icon.eot?q2futz#iefix') format('embedded-opentype'), url(icomoon-font-path + '/icon.ttf?q2futz') format('truetype'), url(icomoon-font-path + '/icon.woff?q2futz') format('woff'), url(icomoon-font-path + '/icon.svg?q2futz#icon') format('svg')
+  src url(icomoon-font-path + '/icon.eot?m8jeci')
+  src url(icomoon-font-path + '/icon.eot?m8jeci#iefix') format('embedded-opentype'), url(icomoon-font-path + '/icon.ttf?m8jeci') format('truetype'), url(icomoon-font-path + '/icon.woff?m8jeci') format('woff'), url(icomoon-font-path + '/icon.svg?m8jeci#icon') format('svg')
   font-weight normal
   font-style normal
 
@@ -23,9 +26,22 @@ icon-edit = "\e900"
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
 
+.icon-plus-border
+  &:before
+    content icon-plus-border
+
+.icon-plus2
+  &:before
+    content icon-plus2
+
 .icon-delete
   &:before
     content icon-delete
+
+.icon-plus
+  &:before
+    content icon-plus
+
 .icon-edit
   &:before
     content icon-edit

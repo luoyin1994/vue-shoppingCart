@@ -1,0 +1,7 @@
+average-inline-item(total-item, item-width = 22%)
+  display inline-block
+  box-sizing border-box
+  width item-width
+  margin-left ((100% - @width* total-item) / (total-item - 1))
+  &:nth-child(1)
+    margin-left 0

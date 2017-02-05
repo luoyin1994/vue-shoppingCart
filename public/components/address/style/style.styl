@@ -1,9 +1,7 @@
-//@import "mixins/row-num.styl"
-//@import "mixins/box-shadow-around.styl"
-//@import "mixins/border-radius-left.styl"
-//@import "mixins/border-radius-right.styl"
-@import "mixins/icon-plus.styl"
+@import "mixins/center-y-relative.styl"
+@import "mixins/average-inline-item.styl"
 #address
+  margin 20px 0
   .flow
     margin 30px auto
     line-height 2
@@ -21,17 +19,16 @@
     .delivery-address
       .addresses
         .address-wrap
-          position relative
-          width 22%
-          height 0.9 *@width
-          border 2px solid #ff6e2a
-          vertical-align top //只针对自身
-          display inline-block
-          box-sizing border-box
-          margin-left ((100% - 4 * @width ) / 3)
+          average-inline-item(4,21%)
           min-height 130px
-          &:nth-child(1)
-            margin-left 0
+          cursor pointer
+          color #222222
+          position relative
+          height 0.9 *@width
+          border 2px solid #cccccc
+          vertical-align top //只针对自身 //没有最后一个添加地址后middle居中
+          &.select, &:hover
+            border-color #ff6e2a
           .wrap
             padding 10px 15px 5px
             .address-info
@@ -57,14 +54,17 @@
               .phone
                 font-size 13px
               .address-state
+                display none
                 position absolute
                 bottom 5px
                 font-weight 600
                 color #ff6e2a
                 cursor pointer
+                &:hover
+                  opacity 0.7
                 &:before
                   content '设为默认'
-                &.address-default
+                &.default
                   &:before
                     content '默认地址'
             .opacity-wrap
@@ -75,28 +75,64 @@
               bottom 0
               .icon
                 position absolute
-              .icon-edit
-                top 20%
-              .icon-delete
-                bottom 20%
+                &:hover
+                  color #ff844c
+                &.icon-edit
+                  top 20%
+                &.icon-delete
+                  bottom 20%
           &.add-address-wrap
-              .wrap
-                .add-address
-                  width 100px
-                  margin 0 auto
-                  position relative
-                  text-align center
-                  .icon
-                    color red
-                    &.icon-plus
-                      icon-plus(3px, 100px)
-                      transform translateX(-50%)
-                  &:after
-                    position absolute
-                    display block
-                    content '添加新地址'
-                    left 0
-                    bottom 0
+            &:hover
+              .icon-plus2
+                color #ff9865 !important
+                &:after
+                  color #ff844c !important
+            text-align center
+            .add-address
+              center-y-relative()
+              display inline-block
+              vertical-align middle
+              .icon-plus2
+                size = 70px
+                font-size size
+                color #a5a5a5
+                line-height 1
+                &:after
+                  color #828282
+                  font-weight 600
+                  margin 5px 0 10px
+                  font-size 0.22 *size
+                  content '添加新地址'
+                  display block
+          &:hover,&.select
+            .address-info
+                .address-state
+                  display block
+      .more
+        &:hover
+          color #ff6e2a
+      .delivery-method
+        margin 80px
+        .methods
+          width 45%
+          margin 0 auto
+          .method-item
+            average-inline-item(2,46%)
+            line-height 2
+            padding 8px 0
+            border 2px solid #cccccc
+            font-size 18px
+            text-align center
+            cursor pointer
+            &.select, &:hover
+              border-color #ff6e2a
+              .method-title
+                color #ff410d
+      >footer
+        text-align center
+        margin 40px 0
+
+
 
 
 

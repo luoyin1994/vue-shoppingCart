@@ -20,7 +20,7 @@ link(rel="stylesheet" href="/components/address/style/style.css")
         span.title 配送地址
         span.line-v
       section.addresses
-        .address-wrap
+        .address-wrap.select
           .wrap
             .address-info
               .title
@@ -29,7 +29,7 @@ link(rel="stylesheet" href="/components/address/style/style.css")
                 span.name LuoYe
               .address 地球村 亚洲楼 中国层 502号 地球村亚洲楼中国层502号地球村亚洲楼中国层502号
               .phone 15912345678
-              .address-state.address-default
+              .address-state.default
             .opacity-wrap
               i.icon.icon-edit
               i.icon.icon-delete
@@ -42,7 +42,7 @@ link(rel="stylesheet" href="/components/address/style/style.css")
                 span.name LuoYe
               .address 地球村 亚洲楼 中国层 502号 地球村亚洲楼中国层502号地球村亚洲楼中国层502号
               .phone 15912345678
-              .address-state.address-default
+              .address-state
             .opacity-wrap
               i.icon.icon-edit
               i.icon.icon-delete
@@ -55,15 +55,35 @@ link(rel="stylesheet" href="/components/address/style/style.css")
                 span.name LuoYe
               .address 地球村 亚洲楼 中国层 502号 地球村亚洲楼中国层502号地球村亚洲楼中国层502号
               .phone 15912345678
-              .address-state.address-default
+              .address-state
             .opacity-wrap
               i.icon.icon-edit
               i.icon.icon-delete
         .address-wrap.add-address-wrap
-          .wrap
-            .add-address
-              i.icon.icon-plus
+          span.add-address
+            i.icon.icon-plus2
       .more more
+      section.delivery-method
+        header.title-wrap
+          span.line-v
+          span.title 配送方式
+          span.line-v
+        section.methods
+          .method-item.select
+            .method-title 标准配送
+            .method-price Free
+          .method-item
+            .method-title 高级配送
+            .method-price ￥ 180元
+      footer
+        .line-v.line-devide
+        .submit.danger 下一步
+
+
+
+
+
+
 
 
 
