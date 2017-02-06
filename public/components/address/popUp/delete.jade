@@ -1,0 +1,19 @@
+link(rel="stylesheet" href="/components/address/popUp/style/style-delete.css")
+
+#popUpDelete(v-if='deletePopUpFlag')
+  .alert
+    i.icon-close(@click='deletePopUpFlag=false')
+    .content
+      .warning-text 你确认删除此订单信息吗？
+      .choose-wrap
+        .button.yes(@click='delAddress') YES
+        .button.no.danger(@click='deletePopUpFlag=false') NO
+
+
+
+
+
+
+
+
+

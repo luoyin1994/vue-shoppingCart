@@ -1,0 +1,33 @@
+link(rel="stylesheet" href="/components/address/popUp/style/style.css")
+
+form#popUpEdit(action='/address' method='post')(v-if='editPopUpFlag')
+  .alert
+    i.icon-close(@click='editPopUpFlag=false')
+    .content
+      .row
+        label(for='username') 收件人姓名:
+        input#username(v-bind:value="address.userName")
+      .row
+        label(for='province') 所在省份:
+        input#province(v-bind:value='address.province')
+      .row
+        label(for='district') 地区/城市:
+        input#district(v-bind:value='address.district')
+      .row
+        label(for='streetName') 详细地址:
+        input#streetName(v-bind:value='address.streetName')
+      .row
+        label(for='phone') 联系电话:
+        input#phone(v-bind:value='address.phone')
+      .choose-wrap
+        input.button.yes(type='submit' value='YES')(@click='')
+        .button.no.danger(@click='editPopUpFlag=false') NO
+
+
+
+
+
+
+
+
+

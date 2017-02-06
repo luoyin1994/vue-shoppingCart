@@ -1,0 +1,61 @@
+{
+  "status":0,
+  "message":"",
+  "result":[
+    {
+      "addressId":"101",
+      "userName":"LuoYe",
+      "province":"落叶省",
+      "district":"水果市",
+      "streetName":"落叶省 水果市 苹果路 502号",
+      "postCode":"101",
+      "phone":"15956896789",
+      "isDefault":true,
+      "selectDefault":true
+    }
+    ,{
+      "addressId":"102",
+      "userName":"ZongYe",
+      "province":"水仙省",
+      "district":"粽叶市",
+      "streetName":"水仙省 粽叶市 粽子路 105号",
+      "postCode":"101",
+      "phone":"159134686789",
+      "isDefault":false,
+      "selectDefault":false
+    }
+    ,{
+      "addressId":"103",
+      "userName":"HuaYe",
+      "province":"荷花省",
+      "district":"花叶市",
+      "streetName":"荷花省 花叶市 水乡路 302号",
+      "postCode":"101",
+      "phone":"15912349874",
+      "isDefault":false,
+      "selectDefault":false
+    }
+    ,{
+      "addressId":"104",
+      "userName":"HuaYe",
+      "province":"荷花省",
+      "district":"花叶市",
+      "streetName":"荷花省 花叶市 水乡路 302号",
+      "postCode":"101",
+      "phone":"15912349874",
+      "isDefault":false,
+      "selectDefault":false
+    }
+    ,{
+      "addressId":"105",
+      "userName":"HuaYe",
+      "province":"荷花省",
+      "district":"花叶市",
+      "streetName":"荷花省 花叶市 水乡路 302号",
+      "postCode":"101",
+      "phone":"15912349874",
+      "isDefault":false,
+      "selectDefault":false
+    }
+  ]
+}

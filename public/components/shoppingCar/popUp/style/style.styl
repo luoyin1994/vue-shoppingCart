@@ -1,0 +1,65 @@
+@import "mixins/icon-close.styl" //mixin中的引用时不会影响外边的代码的
+@import "mixins/box-shadow-around.styl" //mixin中的引用时不会影响外边的代码的
+@import "mixins/center-y-relative.styl"
+@import "mixins/center-both-absolute.styl"
+#popUp
+  position absolute
+  top 0
+  bottom 0
+  left 0
+  right 0
+  background rgba(204, 204, 204, 0.4)
+  .alert
+    center-both-absolute()
+    background-color #ffffff
+    alert-height = 230px
+    height alert-height
+    width 2 *@height
+    border-radius 3px
+    box-shadow 1px 1px 15px #636363
+    .icon-close
+      color #5e5e5e //color还可以控制shadow的颜色 color可以控制文字，border,shadow
+      icon-close(30px)
+      right 15px
+      top 15px
+      border-radius 50%
+      transition 0.4s
+      &:hover
+        color #ffffff
+        background-color #db4c19
+    .content
+      height 0.7 *alert-height
+      margin 0 auto
+      center-y-relative()
+      width 80%
+      .warning-text
+        height 0.42 *alert-height
+        line-height @height
+        text-align center
+      .choose-wrap
+        width 84%
+        margin 0 auto
+        font-size 0
+        padding-bottom 30px
+        .button
+          width = 46%
+          margin = (100% - 2 *width)
+          width width
+          padding 12px 0
+          text-align center
+          font-size 16px
+          display inline-block
+          border-radius 3px
+          cursor pointer
+          border 1px solid #d1273b
+          transition 0.3s
+          &.yes
+            margin -2px
+            &:hover
+              background-color #d1273b
+          &.no
+            &:hover
+              background-color #fff !important
+          &:last-child
+            margin-left margin
+
