@@ -20,8 +20,7 @@ link(rel="stylesheet" href="/components/address/style/style.css")
         span.title 配送地址
         span.line-v
       ul.addresses
-        li(v-for="(item,index) in filterAddress").address-wrap(:class="{'select':item.selected}" @click="selectAddress(item)")
-          p {{item.selected}}
+        li(v-for="(item,index) in filterAddress").address-wrap(:class="{'select':item.selectDefault ? item.selectDefault:item.selected}" @click="selectAddress(item)")
           .wrap
             dl.address-info
               dt.title
@@ -37,19 +36,16 @@ link(rel="stylesheet" href="/components/address/style/style.css")
         .address-wrap.add-address-wrap
           span.add-address
             i.icon.icon-plus2
-      .more more
+      .more(:class="{'arrow-top':arrowTopFlag}" @click='loadMore') more
       section.delivery-method
         header.title-wrap
           span.line-v
           span.title 配送方式
           span.line-v
         ul.methods
-          li.method-item.select
-            .method-title 标准配送
-            .method-price Free
-          li.method-item
-            .method-title 高级配送
-            .method-price ￥ 180元
+          li(v-for='item in deliveryMethodList').method-item(:class="{'select':item.selectDefault ? item.selectDefault:item.selected}" @click="selectDeliveryMethod(item)")
+            .method-title {{item.deliveryMethod}}
+            .method-price {{item.price }}
       footer
         .line-v.line-devide
         .submit.danger 下一步
